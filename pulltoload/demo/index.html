@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./index.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="main">
+			<p> 模拟移动端后向上滑动 </p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+			<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!
+			</p>
+	</div>
+	<div class="loading" id="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+	</div>
+	<div id="test">
+
+	</div>
+	<script src="../pulltoload.js"></script>
+	<script>
+		var pull = new PullToLoad('body')
+
+
+		pull.on('load', function(reset) {
+			setTimeout(() => {
+				var fragement = document.createDocumentFragment();
+				var main = document.getElementById('main');
+				for (var i = 0; i < 5; i++) {
+					var p = document.createElement('p');
+					var text = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic architecto quis necessitatibus rerum, ex ab deserunt impedit laboriosam, rem adipisci minima! Voluptates eum ducimus explicabo incidunt, eligendi! Dolores itaque, voluptate!');
+					p.appendChild(text);
+					fragement.appendChild(p);
+				}
+				main.appendChild(fragement);
+				//当加载结束后，调用reset函数，重置loading
+				reset();
+			}, 1000);
+		})
+	</script>
+</body>
+
+</html>
